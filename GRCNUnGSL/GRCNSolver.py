@@ -47,7 +47,6 @@ class GRCNSolver(Solver):
         loop_edge_index = torch.stack([torch.arange(self.n_nodes), torch.arange(self.n_nodes)])
         edges = torch.cat([edge_index, loop_edge_index], dim=1)
         self.adj = torch.sparse.FloatTensor(edges, torch.ones(edges.shape[1]), [self.n_nodes, self.n_nodes]).to(self.device).coalesce()
-        self.Edge_variance=None
         self.run_time=None
     def learn(self, debug=False,run_time=None):
         '''
@@ -65,32 +64,25 @@ class GRCNSolver(Solver):
         graph : torch.tensor
             The learned structure.
         '''
-        softmax = torch.nn.Softmax(dim=1)
-        self.uncertrainy = None
         for epoch in range(self.conf.training['n_epochs']):
             improve = ''
             t0 = time.time()
             self.model.train()
             self.optim1.zero_grad()
             self.optim2.zero_grad()
-            self.optim_feat.zero_grad()
+            self.optim_ungsl.zero_grad()
 
             # forward and backward
-            output, _,Adj_new = self.model(self.feats, self.adj,uncertainty=self.uncertrainy)
-            if epoch % self.conf.freq ==0:
-                temple_output = output
-                prob_matrix=softmax(temple_output.detach())
-                self.uncertrainy = -torch.sum(prob_matrix * torch.log(prob_matrix), dim=1)
+            output, _,Adj_new = self.model(self.feats, self.adj)
             loss_train = self.loss_fn(output[self.train_mask], self.labels[self.train_mask])
             acc_train = self.metric(self.labels[self.train_mask].cpu().numpy(), output[self.train_mask].detach().cpu().numpy())
             loss_train.backward()
             self.optim1.step()
-            self.optim_feat.step()
+            self.optim_ungsl.step()
             self.optim2.step()
             # Evaluate
             loss_val, acc_val, adjs = self.evaluate(self.val_mask)
             nni.report_intermediate_result(acc_val)
-            #best_output=None
             # save
             if acc_val > self.result['valid']:
                 self.total_time = time.time() - self.start_time
@@ -135,41 +127,7 @@ class GRCNSolver(Solver):
         self.model.eval()
         with torch.no_grad():
             Test=False
-            output, adjs,Adj_new= self.model(self.feats, self.adj,Test=Test,Edge_variance=self.Edge_variance)
-
-            # if len(test_mask) == 1000:
-            #     Test=True
-            #     # output, adjs,Adj_new= self.model(self.feats, self.adj,Test=Test,Edge_variance=self.Edge_variance)
-            #     for i in [10,20,30,40,50,60,70,80,90]:
-            #         output1, _,_= self.model(self.feats, self.adj,Test=Test,Edge_variance=self.Edge_variance,drop_ratio=i)
-            #         logits1 = output1[test_mask]
-            #         labels = self.labels[test_mask]
-            #         print(self.metric(labels.cpu().numpy(), logits1.detach().cpu().numpy()))
-            # if len(test_mask)==1000:
-            #     softmax_func=torch.nn.Softmax(dim=1)
-            #     prob_matrix=softmax_func(output)
-            #     labels = self.labels
-            #     uncertrainy = -torch.sum(prob_matrix * torch.log(prob_matrix), dim=1)
-            #     uncertrainy = uncertrainy
-            #     pred=output.argmax(1) == self.labels
-            #     print(torch.sum(pred==True))
-            #     print(torch.sum(pred==False))
-            #     print(uncertrainy*(pred.int()==1))
-            #     print(torch.sum(uncertrainy*(pred.int()==1))/torch.sum(pred==True))
-            #     print(torch.sum(uncertrainy*(pred.int()==0))/torch.sum(pred==False))
-
-            # if len(test_mask)==10001:
-            #     Test=True
-            #     softmax_func=torch.nn.Softmax(dim=1)
-            #     prob_matrix=softmax_func(output)
-            #     uncertrainy = -torch.sum(prob_matrix * torch.log(prob_matrix), dim=1)
-            #     for i in [10,20,30,40,50,60,70,80,90]:
-            #         output1, _,_= self.model(self.feats, self.adj,Test=Test,Edge_variance=self.Edge_variance,drop_ratio=i,entropy=uncertrainy)
-            #         logits1 = output1[test_mask]
-            #         labels = self.labels[test_mask]
-            #         print(self.metric(labels.cpu().numpy(), logits1.detach().cpu().numpy()))
-            #         print(i)
-
+            output, adjs,Adj_new= self.model(self.feats, self.adj)
 
         logits = output[test_mask]
         labels = self.labels[test_mask]
@@ -186,4 +144,4 @@ class GRCNSolver(Solver):
         self.optim1 = torch.optim.Adam(self.model.base_parameters(), lr=self.conf.training['lr'],
                                        weight_decay=self.conf.training['weight_decay'])
         self.optim2 = torch.optim.Adam(self.model.graph_parameters(), lr=self.conf.training['lr_graph'])
-        self.optim_feat= torch.optim.Adam(self.model.delta_parameters(), lr=self.conf.training["delta_lr"])
+        self.optim_ungsl= torch.optim.Adam(self.model.ungsl_parameters(), lr=self.conf.training["ungsl_lr"])

@@ -1,0 +1,12 @@
+{
+    "ungsl_lr": 0.017219416027185522,
+    "beta": 0.22719487786571546,
+    "lr_cl": 0.0007188933126003108,
+    "lr_gsl": 0.010555096909144565,
+    "init_value": 0.6697752238267177,
+    "epsilon": 0.13459373361867466,
+    "maskfeat_rate_learner": 0.4,
+    "maskfeat_rate_anchor": 0.6,
+    "dropedge_rate": 0.6,
+    "mi_ratio": 0.05
+}

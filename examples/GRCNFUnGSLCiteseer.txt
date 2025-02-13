@@ -1,0 +1,89 @@
+{'model': {'type': 'gcn', 'n_layers': 2, 'n_linear': 1, 'act': 'F.relu', 'n_hidden': 32, 'dropout': 0.5, 'input_dropout': 0, 'norm': {'flag': False, 'norm_type': 'BatchNorm1d'}, 'input_layer': False, 'output_layer': False, 'spmm_type': 1}, 'gsl': {'model_type': 'diag', 'K': 200, 'normalize': False}, 'dataset': {'feat_norm': False, 'sparse': True}, 'training': {'data_cpu': False, 'lr': 0.05, 'n_epochs': 200, 'weight_decay': 0.005, 'lr_graph': 0.001, 'patience': None, 'criterion': None, 'init_value': 0.01}, 'analysis': {'flag': False, 'save_graph': False, 'save_graph_path': 'results/graph'}}
+Namespace(analysis={'flag': False, 'save_graph': False, 'save_graph_path': 'results/graph'}, dataset={'feat_norm': False, 'sparse': True, 'name': 'cora'}, freq=2, gsl={'model_type': 'diag', 'K': 150, 'normalize': False}, model={'type': 'gcn', 'n_layers': 2, 'n_linear': 1, 'act': 'F.relu', 'n_hidden': 32, 'dropout': 0.5, 'input_dropout': 0, 'norm': {'flag': False, 'norm_type': 'BatchNorm1d'}, 'input_layer': False, 'output_layer': False, 'spmm_type': 1}, training={'data_cpu': False, 'lr': 0.022885775808580377, 'n_epochs': 200, 'weight_decay': 0.005, 'lr_graph': 0.002425245661126529, 'patience': None, 'criterion': None, 'init_value': 0.9307997034647846, 'delta_lr': 0.0034280045664111755, 'beta': 0.0014134977803301407, 'dataset': 'cora'})
+/home/hs/anaconda3/envs/OpenGSL4/lib/python3.8/site-packages/opengsl/data/dataset/dataset.py:82: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:605.)
+  self.adj = torch.sparse.FloatTensor(self.g.edge_index, torch.ones(self.g.edge_index.shape[1]),
+----Data statistics------'
+                #Nodes 3327
+                #Edges 4552
+                #Classes 6
+----Split statistics of 1 splits------'
+                #Train samples 120
+                #Val samples 500
+                #Test samples 1000
+Solver Version : [grcn]
+Exp 0/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 37.2648
+Loss(test) 0.8601 | Acc(test) 0.7420
+Exp 1/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 39.4892
+Loss(test) 0.8903 | Acc(test) 0.7450
+Exp 2/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 32.3341
+Loss(test) 0.8584 | Acc(test) 0.7320
+Exp 3/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 23.8544
+Loss(test) 0.8325 | Acc(test) 0.7420
+Exp 4/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 39.7166
+Loss(test) 0.8367 | Acc(test) 0.7400
+Exp 5/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 30.5883
+Loss(test) 0.8306 | Acc(test) 0.7510
+Exp 6/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 35.2229
+Loss(test) 0.8545 | Acc(test) 0.7460
+Exp 7/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 40.2412
+Loss(test) 0.8762 | Acc(test) 0.7470
+Exp 8/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 28.5600
+Loss(test) 0.8424 | Acc(test) 0.7440
+Exp 9/10
+True
+None
+torch.Size([2708, 2708])
+Optimization Finished!
+Time(s): 32.8782
+Loss(test) 0.8377 | Acc(test) 0.7520
+All runs:
+Highest Train: 98.67 ± 1.19
+Highest Valid: 76.68 ± 0.85
+   Final Test: 74.41 ± 0.57
+74.41
+[2025-02-12 14:58:14] INFO (nni/MainThread) Final result: 74.41

@@ -1,0 +1,16 @@
+{
+    "ungsl_lr": 0.00011340259194911251,
+    "beta": 0.8256888377656278,
+    "lr": 0.0029386527119363076,
+    "lr_cls": 0.0015334097654208525,
+    "AdjThreshold": 0.0001,
+    "init_value": 0.9983515055804093,
+    "dropout_cls": 0.3,
+    "dropedge_cls": 0.5,
+    "n_layers_cls": 2,
+    "dropout": 0.3,
+    "dropedge_rate": 0.7,
+    "n_layers": 2,
+    "maskfeat_rate_learner": 0.7,
+    "maskfeat_rate_anchor": 0.5
+}

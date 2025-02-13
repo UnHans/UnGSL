@@ -1,0 +1,87 @@
+[2024-08-19 08:26:47] PRINT {'delta_lr': 0.0005603530619781931, 'beta': 0.40364199178973365, 'lr': 0.06245740990517031, 'lr_graph': 0.0016337774405164925, 'init_value': 0.576226387307271}
+[2024-08-19 08:26:47] PRINT {'model': {'type': 'gcn', 'n_layers': 2, 'n_linear': 1, 'act': 'F.relu', 'n_hidden': 32, 'dropout': 0.5, 'input_dropout': 0, 'norm': {'flag': False, 'norm_type': 'BatchNorm1d'}, 'input_layer': False, 'output_layer': False, 'spmm_type': 1}, 'gsl': {'model_type': 'diag', 'K': 100, 'normalize': True}, 'dataset': {'feat_norm': False, 'sparse': True}, 'training': {'data_cpu': False, 'lr': 0.005, 'n_epochs': 300, 'weight_decay': 0.005, 'lr_graph': 0.001, 'init_value': 0.01, 'patience': None, 'criterion': None, 'dataset': 'cora'}, 'analysis': {'flag': False, 'save_graph': False, 'save_graph_path': 'results/graph'}, 'delta_lr': 0.0005603530619781931, 'beta': 0.40364199178973365, 'lr': 0.06245740990517031, 'lr_graph': 0.0016337774405164925, 'init_value': 0.576226387307271}
+[2024-08-19 08:26:47] PRINT Namespace(analysis={'flag': False, 'save_graph': False, 'save_graph_path': 'results/graph'}, beta=0.40364199178973365, dataset={'feat_norm': False, 'sparse': True}, delta_lr=0.0005603530619781931, gsl={'model_type': 'diag', 'K': 100, 'normalize': True}, init_value=0.576226387307271, lr=0.06245740990517031, lr_graph=0.0016337774405164925, model={'type': 'gcn', 'n_layers': 2, 'n_linear': 1, 'act': 'F.relu', 'n_hidden': 32, 'dropout': 0.5, 'input_dropout': 0, 'norm': {'flag': False, 'norm_type': 'BatchNorm1d'}, 'input_layer': False, 'output_layer': False, 'spmm_type': 1}, training={'data_cpu': False, 'lr': 0.06245740990517031, 'n_epochs': 300, 'weight_decay': 0.005, 'lr_graph': 0.0016337774405164925, 'init_value': 0.576226387307271, 'patience': None, 'criterion': None, 'dataset': 'cora', 'delta_lr': 0.0005603530619781931, 'beta': 0.40364199178973365})
+[2024-08-19 08:26:53] PRINT ----Data statistics------'
+[2024-08-19 08:26:53] PRINT                 #Nodes 2708
+[2024-08-19 08:26:53] PRINT                 #Edges 5278
+[2024-08-19 08:26:53] PRINT                 #Classes 7
+[2024-08-19 08:26:53] PRINT ----Split statistics of 1 splits------'
+[2024-08-19 08:26:53] PRINT                 #Train samples 140
+[2024-08-19 08:26:53] PRINT                 #Val samples 500
+[2024-08-19 08:26:53] PRINT                 #Test samples 1000
+[2024-08-19 08:26:53] PRINT Solver Version : [grcn]
+[2024-08-19 08:26:53] PRINT Exp 0/10
+[2024-08-19 08:26:53] PRINT True
+[2024-08-19 08:26:53] PRINT None
+[2024-08-19 08:26:53] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:28:34] PRINT Optimization Finished!
+[2024-08-19 08:28:34] PRINT Time(s): 33.9858
+[2024-08-19 08:28:34] PRINT Loss(test) 0.5110 | Acc(test) 0.8570
+[2024-08-19 08:28:34] PRINT Exp 1/10
+[2024-08-19 08:28:34] PRINT True
+[2024-08-19 08:28:34] PRINT None
+[2024-08-19 08:28:34] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:30:14] PRINT Optimization Finished!
+[2024-08-19 08:30:14] PRINT Time(s): 47.5165
+[2024-08-19 08:30:14] PRINT Loss(test) 0.5155 | Acc(test) 0.8580
+[2024-08-19 08:30:14] PRINT Exp 2/10
+[2024-08-19 08:30:14] PRINT True
+[2024-08-19 08:30:14] PRINT None
+[2024-08-19 08:30:14] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:31:54] PRINT Optimization Finished!
+[2024-08-19 08:31:54] PRINT Time(s): 38.2910
+[2024-08-19 08:31:54] PRINT Loss(test) 0.5157 | Acc(test) 0.8490
+[2024-08-19 08:31:54] PRINT Exp 3/10
+[2024-08-19 08:31:54] PRINT True
+[2024-08-19 08:31:54] PRINT None
+[2024-08-19 08:31:54] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:33:31] PRINT Optimization Finished!
+[2024-08-19 08:33:31] PRINT Time(s): 51.6444
+[2024-08-19 08:33:32] PRINT Loss(test) 0.5091 | Acc(test) 0.8630
+[2024-08-19 08:33:32] PRINT Exp 4/10
+[2024-08-19 08:33:32] PRINT True
+[2024-08-19 08:33:32] PRINT None
+[2024-08-19 08:33:32] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:35:11] PRINT Optimization Finished!
+[2024-08-19 08:35:11] PRINT Time(s): 44.7020
+[2024-08-19 08:35:11] PRINT Loss(test) 0.5103 | Acc(test) 0.8590
+[2024-08-19 08:35:11] PRINT Exp 5/10
+[2024-08-19 08:35:11] PRINT True
+[2024-08-19 08:35:11] PRINT None
+[2024-08-19 08:35:11] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:36:52] PRINT Optimization Finished!
+[2024-08-19 08:36:52] PRINT Time(s): 34.7910
+[2024-08-19 08:36:52] PRINT Loss(test) 0.5060 | Acc(test) 0.8570
+[2024-08-19 08:36:52] PRINT Exp 6/10
+[2024-08-19 08:36:52] PRINT True
+[2024-08-19 08:36:52] PRINT None
+[2024-08-19 08:36:52] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:38:33] PRINT Optimization Finished!
+[2024-08-19 08:38:33] PRINT Time(s): 58.8279
+[2024-08-19 08:38:33] PRINT Loss(test) 0.5036 | Acc(test) 0.8580
+[2024-08-19 08:38:33] PRINT Exp 7/10
+[2024-08-19 08:38:33] PRINT True
+[2024-08-19 08:38:33] PRINT None
+[2024-08-19 08:38:33] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:40:10] PRINT Optimization Finished!
+[2024-08-19 08:40:10] PRINT Time(s): 49.8948
+[2024-08-19 08:40:10] PRINT Loss(test) 0.5159 | Acc(test) 0.8560
+[2024-08-19 08:40:10] PRINT Exp 8/10
+[2024-08-19 08:40:10] PRINT True
+[2024-08-19 08:40:10] PRINT None
+[2024-08-19 08:40:10] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:41:50] PRINT Optimization Finished!
+[2024-08-19 08:41:50] PRINT Time(s): 54.1382
+[2024-08-19 08:41:51] PRINT Loss(test) 0.5085 | Acc(test) 0.8580
+[2024-08-19 08:41:51] PRINT Exp 9/10
+[2024-08-19 08:41:51] PRINT True
+[2024-08-19 08:41:51] PRINT None
+[2024-08-19 08:41:51] PRINT torch.Size([2708, 2708])
+[2024-08-19 08:43:31] PRINT Optimization Finished!
+[2024-08-19 08:43:31] PRINT Time(s): 51.8605
+[2024-08-19 08:43:31] PRINT Loss(test) 0.4971 | Acc(test) 0.8690
+[2024-08-19 08:43:31] PRINT All runs:
+[2024-08-19 08:43:31] PRINT Highest Train: 94.64 ± 1.02
+[2024-08-19 08:43:31] PRINT Highest Valid: 83.78 ± 0.26
+[2024-08-19 08:43:31] PRINT    Final Test: 85.84 ± 0.51
+[2024-08-19 08:43:31] PRINT 85.84

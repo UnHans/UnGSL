@@ -1,0 +1,241 @@
+nohup: ignoring input
+/home/hs/anaconda3/envs/OpenGSL4/lib/python3.8/site-packages/nni/runtime/platform/standalone.py:31: RuntimeWarning: Running NNI code without runtime. Check the following tutorial if you are new to NNI: https://nni.readthedocs.io/en/stable/Tutorial/QuickStart.html#id1
+  warnings.warn(warning_message, RuntimeWarning)
+{}
+{'model': {'type': 'gcn'}, 'norm': False, 'sparse': False, 'epochs_cls': 400, 'lr_cls': 0.01, 'w_decay_cls': 5e-07, 'hidden_dim_cls': 64, 'dropout_cls': 0.5, 'dropedge_cls': 0.75, 'n_layers_cls': 2, 'patience_cls': 100, 'epochs': 1500, 'lr': 0.001, 'wd': 0.0, 'n_hidden': 512, 'n_embed': 256, 'n_proj': 256, 'dropout': 0.5, 'dropedge_rate': 0.25, 'n_layers': 2, 'type_learner': 'att', 'k': 20, 'sim_function': 'cosine', 'activation_learner': 'F.tanh', 'eval_freq': 200, 'tau': 0.9999, 'maskfeat_rate_learner': 0.6, 'maskfeat_rate_anchor': 0.8, 'contrast_batch_size': 0, 'c': 0, 'training': {'patience': None, 'criterion': None}, 'dataset': {'feat_norm': False, 'cora_split': False, 'load_graph': False, 'sparse': True}, 'analysis': {'flag': False, 'save_graph': False, 'save_graph_path': 'results/graph'}}
+Namespace(AdjThreshold=0, activation_learner='F.tanh', analysis={'flag': False, 'save_graph': False, 'save_graph_path': 'results/graph'}, c=0, contrast_batch_size=0, dataset={'feat_norm': False, 'cora_split': False, 'load_graph': False, 'sparse': True, 'name': 'blogcatalog'}, dropedge_cls=0.1, dropedge_rate=0.7, dropout=0.5, dropout_cls=0.3, epochs=1500, epochs_cls=400, eval_freq=200, hidden_dim_cls=64, k=20, lr=0.0014356507993350345, lr_cls=0.0007263663738159308, maskfeat_rate_anchor=0.4, maskfeat_rate_learner=0.4, model={'type': 'gcn'}, n_embed=256, n_hidden=512, n_layers=3, n_layers_cls=2, n_proj=256, norm=False, patience_cls=100, sim_function='cosine', sparse=False, tau=0.9999, training={'patience': None, 'criterion': None, 'init_value': 0.23632397568770327, 'ungsl_lr': 0.0001351479148195372, 'beta': 0.7162300471731685}, type_learner='att', w_decay_cls=5e-07, wd=0.0)
+/home/hs/anaconda3/envs/OpenGSL4/lib/python3.8/site-packages/opengsl/data/dataset/dataset.py:89: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:605.)
+  self.adj = torch.sparse.FloatTensor(self.g.edge_index, torch.ones(self.g.edge_index.shape[1]),
+----Data statistics------'
+                #Nodes 5196
+                #Edges 171743
+                #Classes 6
+----Split statistics of 1 splits------'
+                #Train samples 519
+                #Val samples 1039
+                #Test samples 3638
+Solver Version : [sublime]
+Exp 0/10
+True
+True
+Time(s) 7.5410 | Loss(val):0.3325 | Acc(val):0.9182 | *
+[2025-02-12 21:10:45] INFO (nni/MainThread) Intermediate result: 0.9181905678537055  (Index 0)
+Time(s) 7.5301 | Loss(val):0.2575 | Acc(val):0.9394 | *
+[2025-02-12 21:11:55] INFO (nni/MainThread) Intermediate result: 0.9393647738209817  (Index 1)
+Time(s) 7.5594 | Loss(val):0.2056 | Acc(val):0.9500 | *
+[2025-02-12 21:13:05] INFO (nni/MainThread) Intermediate result: 0.9499518768046198  (Index 2)
+Time(s) 7.5234 | Loss(val):0.2517 | Acc(val):0.9557 | *
+[2025-02-12 21:14:14] INFO (nni/MainThread) Intermediate result: 0.9557266602502407  (Index 3)
+Time(s) 7.4523 | Loss(val):0.3042 | Acc(val):0.9548 | 
+[2025-02-12 21:15:24] INFO (nni/MainThread) Intermediate result: 0.9547641963426372  (Index 4)
+Time(s) 7.5194 | Loss(val):0.2002 | Acc(val):0.9557 | 
+[2025-02-12 21:16:34] INFO (nni/MainThread) Intermediate result: 0.9557266602502407  (Index 5)
+Time(s) 7.5280 | Loss(val):0.2920 | Acc(val):0.9538 | 
+[2025-02-12 21:17:44] INFO (nni/MainThread) Intermediate result: 0.9538017324350336  (Index 6)
+Optimization Finished!
+Time(s): 273.2308
+Loss(test) 0.2433 | Acc(test) 0.9552
+Exp 1/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.4763 | Loss(val):0.3312 | Acc(val):0.9124 | *
+[2025-02-12 21:19:24] INFO (nni/MainThread) Intermediate result: 0.9124157844080847  (Index 7)
+Time(s) 7.5298 | Loss(val):0.2324 | Acc(val):0.9403 | *
+[2025-02-12 21:20:34] INFO (nni/MainThread) Intermediate result: 0.9403272377285852  (Index 8)
+Time(s) 7.5279 | Loss(val):0.3752 | Acc(val):0.9490 | *
+[2025-02-12 21:21:44] INFO (nni/MainThread) Intermediate result: 0.9489894128970163  (Index 9)
+Time(s) 7.5321 | Loss(val):0.2057 | Acc(val):0.9538 | *
+[2025-02-12 21:22:53] INFO (nni/MainThread) Intermediate result: 0.9538017324350336  (Index 10)
+Time(s) 7.5361 | Loss(val):0.1860 | Acc(val):0.9519 | 
+[2025-02-12 21:24:03] INFO (nni/MainThread) Intermediate result: 0.9518768046198267  (Index 11)
+Time(s) 7.4501 | Loss(val):0.3590 | Acc(val):0.9538 | 
+[2025-02-12 21:25:13] INFO (nni/MainThread) Intermediate result: 0.9538017324350336  (Index 12)
+Time(s) 7.4735 | Loss(val):0.2525 | Acc(val):0.9557 | *
+[2025-02-12 21:26:22] INFO (nni/MainThread) Intermediate result: 0.9557266602502407  (Index 13)
+Optimization Finished!
+Time(s): 481.1653
+Loss(test) 0.2407 | Acc(test) 0.9648
+Exp 2/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.5476 | Loss(val):0.3785 | Acc(val):0.9076 | *
+[2025-02-12 21:28:03] INFO (nni/MainThread) Intermediate result: 0.9076034648700674  (Index 14)
+Time(s) 7.5187 | Loss(val):0.3114 | Acc(val):0.9394 | *
+[2025-02-12 21:29:13] INFO (nni/MainThread) Intermediate result: 0.9393647738209817  (Index 15)
+Time(s) 7.5286 | Loss(val):0.2850 | Acc(val):0.9500 | *
+[2025-02-12 21:30:22] INFO (nni/MainThread) Intermediate result: 0.9499518768046198  (Index 16)
+Time(s) 7.4619 | Loss(val):0.2100 | Acc(val):0.9605 | *
+[2025-02-12 21:31:31] INFO (nni/MainThread) Intermediate result: 0.960538979788258  (Index 17)
+Time(s) 7.4532 | Loss(val):0.2137 | Acc(val):0.9605 | 
+[2025-02-12 21:32:41] INFO (nni/MainThread) Intermediate result: 0.960538979788258  (Index 18)
+Time(s) 7.4441 | Loss(val):0.2462 | Acc(val):0.9615 | *
+[2025-02-12 21:33:50] INFO (nni/MainThread) Intermediate result: 0.9615014436958614  (Index 19)
+Time(s) 7.4575 | Loss(val):0.1960 | Acc(val):0.9577 | 
+[2025-02-12 21:35:00] INFO (nni/MainThread) Intermediate result: 0.9576515880654476  (Index 20)
+Optimization Finished!
+Time(s): 410.7817
+Loss(test) 0.2365 | Acc(test) 0.9632
+Exp 3/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.4532 | Loss(val):0.3816 | Acc(val):0.9115 | *
+[2025-02-12 21:36:41] INFO (nni/MainThread) Intermediate result: 0.9114533205004812  (Index 21)
+Time(s) 7.5415 | Loss(val):0.2387 | Acc(val):0.9394 | *
+[2025-02-12 21:37:50] INFO (nni/MainThread) Intermediate result: 0.9393647738209817  (Index 22)
+Time(s) 7.4731 | Loss(val):0.2223 | Acc(val):0.9509 | *
+[2025-02-12 21:39:00] INFO (nni/MainThread) Intermediate result: 0.9509143407122232  (Index 23)
+Time(s) 7.5131 | Loss(val):0.1880 | Acc(val):0.9528 | *
+[2025-02-12 21:40:09] INFO (nni/MainThread) Intermediate result: 0.9528392685274302  (Index 24)
+Time(s) 7.4862 | Loss(val):0.2248 | Acc(val):0.9528 | 
+[2025-02-12 21:41:19] INFO (nni/MainThread) Intermediate result: 0.9528392685274302  (Index 25)
+Time(s) 7.4992 | Loss(val):0.3091 | Acc(val):0.9557 | *
+[2025-02-12 21:42:28] INFO (nni/MainThread) Intermediate result: 0.9557266602502407  (Index 26)
+Time(s) 7.4598 | Loss(val):0.2393 | Acc(val):0.9557 | 
+[2025-02-12 21:43:38] INFO (nni/MainThread) Intermediate result: 0.9557266602502407  (Index 27)
+Optimization Finished!
+Time(s): 411.0977
+Loss(test) 0.3026 | Acc(test) 0.9634
+Exp 4/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.5077 | Loss(val):0.3506 | Acc(val):0.9115 | *
+[2025-02-12 21:45:19] INFO (nni/MainThread) Intermediate result: 0.9114533205004812  (Index 28)
+Time(s) 7.5016 | Loss(val):0.2414 | Acc(val):0.9374 | *
+[2025-02-12 21:46:28] INFO (nni/MainThread) Intermediate result: 0.9374398460057748  (Index 29)
+Time(s) 7.4973 | Loss(val):0.3271 | Acc(val):0.9423 | *
+[2025-02-12 21:47:37] INFO (nni/MainThread) Intermediate result: 0.9422521655437921  (Index 30)
+Time(s) 7.5290 | Loss(val):0.2000 | Acc(val):0.9480 | *
+[2025-02-12 21:48:47] INFO (nni/MainThread) Intermediate result: 0.9480269489894129  (Index 31)
+Time(s) 7.4717 | Loss(val):0.1937 | Acc(val):0.9557 | *
+[2025-02-12 21:49:56] INFO (nni/MainThread) Intermediate result: 0.9557266602502407  (Index 32)
+Time(s) 7.5028 | Loss(val):0.1887 | Acc(val):0.9548 | 
+[2025-02-12 21:51:06] INFO (nni/MainThread) Intermediate result: 0.9547641963426372  (Index 33)
+Time(s) 7.4891 | Loss(val):0.2013 | Acc(val):0.9567 | *
+[2025-02-12 21:52:15] INFO (nni/MainThread) Intermediate result: 0.9566891241578441  (Index 34)
+Optimization Finished!
+Time(s): 481.2067
+Loss(test) 0.1881 | Acc(test) 0.9623
+Exp 5/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.4953 | Loss(val):0.3186 | Acc(val):0.9115 | *
+[2025-02-12 21:53:56] INFO (nni/MainThread) Intermediate result: 0.9114533205004812  (Index 35)
+Time(s) 7.4682 | Loss(val):0.2414 | Acc(val):0.9403 | *
+[2025-02-12 21:55:06] INFO (nni/MainThread) Intermediate result: 0.9403272377285852  (Index 36)
+Time(s) 7.4858 | Loss(val):0.2293 | Acc(val):0.9432 | *
+[2025-02-12 21:56:15] INFO (nni/MainThread) Intermediate result: 0.9432146294513956  (Index 37)
+Time(s) 7.4909 | Loss(val):0.1842 | Acc(val):0.9538 | *
+[2025-02-12 21:57:25] INFO (nni/MainThread) Intermediate result: 0.9538017324350336  (Index 38)
+Time(s) 7.4543 | Loss(val):0.2168 | Acc(val):0.9586 | *
+[2025-02-12 21:58:34] INFO (nni/MainThread) Intermediate result: 0.958614051973051  (Index 39)
+Time(s) 7.4498 | Loss(val):0.3062 | Acc(val):0.9586 | 
+[2025-02-12 21:59:43] INFO (nni/MainThread) Intermediate result: 0.958614051973051  (Index 40)
+Time(s) 7.4589 | Loss(val):0.1890 | Acc(val):0.9586 | 
+[2025-02-12 22:00:53] INFO (nni/MainThread) Intermediate result: 0.958614051973051  (Index 41)
+Optimization Finished!
+Time(s): 341.4947
+Loss(test) 0.2087 | Acc(test) 0.9645
+Exp 6/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.5111 | Loss(val):0.3794 | Acc(val):0.9009 | *
+[2025-02-12 22:02:33] INFO (nni/MainThread) Intermediate result: 0.9008662175168431  (Index 42)
+Time(s) 7.5442 | Loss(val):0.2823 | Acc(val):0.9384 | *
+[2025-02-12 22:03:43] INFO (nni/MainThread) Intermediate result: 0.9384023099133783  (Index 43)
+Time(s) 7.4999 | Loss(val):0.2384 | Acc(val):0.9480 | *
+[2025-02-12 22:04:52] INFO (nni/MainThread) Intermediate result: 0.9480269489894129  (Index 44)
+Time(s) 7.4790 | Loss(val):0.2612 | Acc(val):0.9548 | *
+[2025-02-12 22:06:02] INFO (nni/MainThread) Intermediate result: 0.9547641963426372  (Index 45)
+Time(s) 7.5160 | Loss(val):0.1948 | Acc(val):0.9548 | 
+[2025-02-12 22:07:11] INFO (nni/MainThread) Intermediate result: 0.9547641963426372  (Index 46)
+Time(s) 7.4867 | Loss(val):0.2447 | Acc(val):0.9577 | *
+[2025-02-12 22:08:21] INFO (nni/MainThread) Intermediate result: 0.9576515880654476  (Index 47)
+Time(s) 7.4727 | Loss(val):0.2384 | Acc(val):0.9557 | 
+[2025-02-12 22:09:30] INFO (nni/MainThread) Intermediate result: 0.9557266602502407  (Index 48)
+Optimization Finished!
+Time(s): 411.1608
+Loss(test) 0.2324 | Acc(test) 0.9590
+Exp 7/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.4992 | Loss(val):0.3262 | Acc(val):0.9105 | *
+[2025-02-12 22:11:11] INFO (nni/MainThread) Intermediate result: 0.9104908565928778  (Index 49)
+Time(s) 7.4469 | Loss(val):0.2560 | Acc(val):0.9432 | *
+[2025-02-12 22:12:21] INFO (nni/MainThread) Intermediate result: 0.9432146294513956  (Index 50)
+Time(s) 7.4531 | Loss(val):0.2402 | Acc(val):0.9451 | *
+[2025-02-12 22:13:30] INFO (nni/MainThread) Intermediate result: 0.9451395572666025  (Index 51)
+Time(s) 7.5365 | Loss(val):0.2348 | Acc(val):0.9567 | *
+[2025-02-12 22:14:40] INFO (nni/MainThread) Intermediate result: 0.9566891241578441  (Index 52)
+Time(s) 7.5038 | Loss(val):0.1900 | Acc(val):0.9586 | *
+[2025-02-12 22:15:50] INFO (nni/MainThread) Intermediate result: 0.958614051973051  (Index 53)
+Time(s) 7.4988 | Loss(val):0.2571 | Acc(val):0.9596 | *
+[2025-02-12 22:16:59] INFO (nni/MainThread) Intermediate result: 0.9595765158806545  (Index 54)
+Time(s) 7.4688 | Loss(val):0.1881 | Acc(val):0.9577 | 
+[2025-02-12 22:18:08] INFO (nni/MainThread) Intermediate result: 0.9576515880654476  (Index 55)
+Optimization Finished!
+Time(s): 411.2791
+Loss(test) 0.2438 | Acc(test) 0.9593
+Exp 8/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.5215 | Loss(val):0.3346 | Acc(val):0.9115 | *
+[2025-02-12 22:19:49] INFO (nni/MainThread) Intermediate result: 0.9114533205004812  (Index 56)
+Time(s) 7.5294 | Loss(val):0.2594 | Acc(val):0.9384 | *
+[2025-02-12 22:20:59] INFO (nni/MainThread) Intermediate result: 0.9384023099133783  (Index 57)
+Time(s) 7.5245 | Loss(val):0.2415 | Acc(val):0.9461 | *
+[2025-02-12 22:22:09] INFO (nni/MainThread) Intermediate result: 0.9461020211742059  (Index 58)
+Time(s) 7.4602 | Loss(val):0.1850 | Acc(val):0.9528 | *
+[2025-02-12 22:23:18] INFO (nni/MainThread) Intermediate result: 0.9528392685274302  (Index 59)
+Time(s) 7.5045 | Loss(val):0.1938 | Acc(val):0.9567 | *
+[2025-02-12 22:24:28] INFO (nni/MainThread) Intermediate result: 0.9566891241578441  (Index 60)
+Time(s) 7.5108 | Loss(val):0.2127 | Acc(val):0.9567 | 
+[2025-02-12 22:25:37] INFO (nni/MainThread) Intermediate result: 0.9566891241578441  (Index 61)
+Time(s) 7.4671 | Loss(val):0.1981 | Acc(val):0.9557 | 
+[2025-02-12 22:26:47] INFO (nni/MainThread) Intermediate result: 0.9557266602502407  (Index 62)
+Optimization Finished!
+Time(s): 342.6570
+Loss(test) 0.1779 | Acc(test) 0.9640
+Exp 9/10
+True
+True
+torch.Size([5196, 5196]) tensor([[0.1267, 0.2527, 0.1931, 0.7066, 0.3631],
+        [0.1267, 0.2527, 0.1931, 0.7066, 0.3631]], device='cuda:0')
+Time(s) 7.4678 | Loss(val):0.3657 | Acc(val):0.9009 | *
+[2025-02-12 22:28:27] INFO (nni/MainThread) Intermediate result: 0.9008662175168431  (Index 63)
+Time(s) 7.5212 | Loss(val):0.2496 | Acc(val):0.9384 | *
+[2025-02-12 22:29:37] INFO (nni/MainThread) Intermediate result: 0.9384023099133783  (Index 64)
+Time(s) 7.5075 | Loss(val):0.2827 | Acc(val):0.9423 | *
+[2025-02-12 22:30:46] INFO (nni/MainThread) Intermediate result: 0.9422521655437921  (Index 65)
+Time(s) 7.4980 | Loss(val):0.1939 | Acc(val):0.9500 | *
+[2025-02-12 22:31:56] INFO (nni/MainThread) Intermediate result: 0.9499518768046198  (Index 66)
+Time(s) 7.4611 | Loss(val):0.2004 | Acc(val):0.9538 | *
+[2025-02-12 22:33:05] INFO (nni/MainThread) Intermediate result: 0.9538017324350336  (Index 67)
+Time(s) 7.5206 | Loss(val):0.2023 | Acc(val):0.9586 | *
+[2025-02-12 22:34:15] INFO (nni/MainThread) Intermediate result: 0.958614051973051  (Index 68)
+Time(s) 7.4266 | Loss(val):0.2551 | Acc(val):0.9586 | 
+[2025-02-12 22:35:24] INFO (nni/MainThread) Intermediate result: 0.958614051973051  (Index 69)
+Optimization Finished!
+Time(s): 411.0196
+Loss(test) 0.1938 | Acc(test) 0.9604
+All runs:
+Highest Train: 97.50 ± 0.29
+Highest Valid: 95.77 ± 0.19
+   Final Test: 96.16 ± 0.31
+96.16272677295217
+[2025-02-12 22:35:55] INFO (nni/MainThread) Final result: 96.16272677295217

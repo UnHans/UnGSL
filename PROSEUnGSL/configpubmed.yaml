@@ -1,0 +1,30 @@
+authorName: hanshen 
+experimentName: ThresholdAvgEntropyPROSEPubmed  
+
+trialConcurrency: 1 
+
+maxExecDuration: 125h 
+maxTrialNum: 666 
+trainingServicePlatform: local  
+
+searchSpacePath: /home/hs/PROSE/PROSE_pubmed/search_space.json
+useAnnotation: false 
+
+logDir: /home/hs/OpenGSL/examples/log  
+logLevel: info
+
+tuner:
+  builtinTunerName: TPE 
+  classArgs:
+    optimize_mode: maximize
+
+
+trial:
+  command: python main.py -dataset pubmed
+  codeDir: /home/hs/PROSE/PROSE_pubmed/ 
+  gpuNum: 1 
+
+localConfig:
+  gpuIndices: 7,1 
+  maxTrialNumPerGpu: 1 
+  useActiveGpu: false 

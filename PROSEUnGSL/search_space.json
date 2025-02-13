@@ -1,0 +1,12 @@
+{
+    "delta_lr":{"_type":"loguniform","_value":[0.0001,0.1]},
+    "beta":{"_type":"uniform","_value":[0.0001, 1]},
+    "lr_cl":{"_type":"loguniform","_value":[0.0001,0.1]},
+    "lr_gsl":{"_type":"loguniform","_value":[0.0001,0.1]},
+    "init_value":{"_type":"uniform","_value":[0.00001,1]},
+    "epsilon":{"_type":"uniform","_value":[0.00001,0.5]},
+    "maskfeat_rate_learner":{"_type":"choice","_value":[0.2,0.4,0.6]},
+    "maskfeat_rate_anchor":{"_type":"choice","_value":[0.2,0.4,0.6]},
+    "dropedge_rate":{"_type":"choice","_value":[0.2,0.4,0.6]},
+    "mi_ratio":{"_type":"choice","_value":[0.05,0.1,0.2,0.4,0.6]}
+}
