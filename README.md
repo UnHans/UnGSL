@@ -1,7 +1,9 @@
 # UnGSL
 The official codes and implementations of the UnGSL method in the paper: **"Uncertainty-aware Graph Structure Learning"**. 
 
-:+1::+1::+1:**The code is built upon the [OpenGSL library](https://github.com/OpenGSL/OpenGSL). We sincerely appreciate their contributions.** :+1::+1::+1:
+:point_right: **The core code of UnGSL is presented in `UnGSLmodule.py`.** :point_left:
+
+:+1::+1::+1:**The code of GSL+UnGSL is built upon the [OpenGSL library](https://github.com/OpenGSL/OpenGSL). We sincerely appreciate their contributions.** :+1::+1::+1:
 
 ## Usage
  One can directly replace the corresponding code in **[OpenGSL library](https://github.com/OpenGSL/OpenGSL)** to use UnGSL. For example, To use GRCN+UnGSL, you can replace `opengsl/module/model/grcn.py` with `GRCNUnGSL/grcn.py` and `opengsl/module/solver/GRCNSolver.py` with `GRCNUnGSL/GRCNSolver.py`.
